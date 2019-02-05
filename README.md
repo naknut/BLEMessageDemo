@@ -1,4 +1,2 @@
-# AirWeigh
-Demo application for my talk on Core Bluetooth
-
-The talk can be found here: https://youtu.be/XEUxl5zlNVw
+# BLEMessageDemo
+Sample apps that can send and recive messages over BLE
