@@ -28,37 +28,37 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //MARK: - Central manager delegate
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
             statusLabel.text = "Status: Scanning"
+            centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
         }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        statusLabel.text = "Status: Discovered"
         centralManager.stopScan()
         self.peripheral = peripheral
         centralManager.connect(peripheral, options: nil)
-        statusLabel.text = "Status: Discovered"
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        statusLabel.text = "Status: Connected"
         peripheral.delegate = self
         peripheral.discoverServices([serviceUUID])
-        statusLabel.text = "Status: Connected"
     }
     
     //MARK: - Peripheral delegate
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        statusLabel.text = "Status: Discovered Service"
         if let service = peripheral.services?.first(where: { $0.uuid == serviceUUID }) {
             peripheral.discoverCharacteristics([characteristicUUID], for: service)
         }
-        statusLabel.text = "Status: Discovered Service"
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        statusLabel.text = "Status: Discovered Characteristics"
         if let characteristic = service.characteristics?.first(where: { $0.uuid == characteristicUUID}) {
             peripheral.setNotifyValue(true, for: characteristic)
         }
-        statusLabel.text = "Status: Discovered Characteristics"
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
