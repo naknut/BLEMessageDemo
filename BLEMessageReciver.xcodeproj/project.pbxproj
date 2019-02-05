@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C441FE181FF3ECE100CD9354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441FE171FF3ECE100CD9354 /* AppDelegate.swift */; };
-		C441FE1A1FF3ECE100CD9354 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C441FE191FF3ECE100CD9354 /* ViewController.swift */; };
-		C441FE1D1FF3ECE100CD9354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C441FE1B1FF3ECE100CD9354 /* Main.storyboard */; };
-		C441FE1F1FF3ECE100CD9354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C441FE1E1FF3ECE100CD9354 /* Assets.xcassets */; };
-		C441FE221FF3ECE100CD9354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C441FE201FF3ECE100CD9354 /* LaunchScreen.storyboard */; };
+		C45FEA1A220A224200BD1D22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45FEA12220A224200BD1D22 /* ViewController.swift */; };
+		C45FEA1B220A224200BD1D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45FEA13220A224200BD1D22 /* Assets.xcassets */; };
+		C45FEA1C220A224200BD1D22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45FEA14220A224200BD1D22 /* LaunchScreen.storyboard */; };
+		C45FEA1D220A224200BD1D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45FEA16220A224200BD1D22 /* Main.storyboard */; };
+		C45FEA1E220A224200BD1D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45FEA18220A224200BD1D22 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C441FE141FF3ECE100CD9354 /* AirWeigh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirWeigh.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C441FE171FF3ECE100CD9354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C441FE191FF3ECE100CD9354 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C441FE1C1FF3ECE100CD9354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C441FE1E1FF3ECE100CD9354 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C441FE211FF3ECE100CD9354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C441FE231FF3ECE100CD9354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C441FE141FF3ECE100CD9354 /* BLEMessageReciver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEMessageReciver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C45FEA12220A224200BD1D22 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C45FEA13220A224200BD1D22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C45FEA15220A224200BD1D22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C45FEA17220A224200BD1D22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C45FEA18220A224200BD1D22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C45FEA19220A224200BD1D22 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 		C441FE0B1FF3ECE100CD9354 = {
 			isa = PBXGroup;
 			children = (
-				C441FE161FF3ECE100CD9354 /* AirWeigh */,
+				C45FEA11220A224200BD1D22 /* BLEMessageReciver */,
 				C441FE151FF3ECE100CD9354 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,30 +46,30 @@
 		C441FE151FF3ECE100CD9354 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C441FE141FF3ECE100CD9354 /* AirWeigh.app */,
+				C441FE141FF3ECE100CD9354 /* BLEMessageReciver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C441FE161FF3ECE100CD9354 /* AirWeigh */ = {
+		C45FEA11220A224200BD1D22 /* BLEMessageReciver */ = {
 			isa = PBXGroup;
 			children = (
-				C441FE171FF3ECE100CD9354 /* AppDelegate.swift */,
-				C441FE191FF3ECE100CD9354 /* ViewController.swift */,
-				C441FE1B1FF3ECE100CD9354 /* Main.storyboard */,
-				C441FE1E1FF3ECE100CD9354 /* Assets.xcassets */,
-				C441FE201FF3ECE100CD9354 /* LaunchScreen.storyboard */,
-				C441FE231FF3ECE100CD9354 /* Info.plist */,
+				C45FEA12220A224200BD1D22 /* ViewController.swift */,
+				C45FEA13220A224200BD1D22 /* Assets.xcassets */,
+				C45FEA14220A224200BD1D22 /* LaunchScreen.storyboard */,
+				C45FEA16220A224200BD1D22 /* Main.storyboard */,
+				C45FEA18220A224200BD1D22 /* AppDelegate.swift */,
+				C45FEA19220A224200BD1D22 /* Info.plist */,
 			);
-			path = AirWeigh;
+			path = BLEMessageReciver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C441FE131FF3ECE100CD9354 /* AirWeigh */ = {
+		C441FE131FF3ECE100CD9354 /* BLEMessageReciver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C441FE261FF3ECE100CD9354 /* Build configuration list for PBXNativeTarget "AirWeigh" */;
+			buildConfigurationList = C441FE261FF3ECE100CD9354 /* Build configuration list for PBXNativeTarget "BLEMessageReciver" */;
 			buildPhases = (
 				C441FE101FF3ECE100CD9354 /* Sources */,
 				C441FE111FF3ECE100CD9354 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = AirWeigh;
+			name = BLEMessageReciver;
 			productName = AirWeigh;
-			productReference = C441FE141FF3ECE100CD9354 /* AirWeigh.app */;
+			productReference = C441FE141FF3ECE100CD9354 /* BLEMessageReciver.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -91,16 +91,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Naknut Industries";
 				TargetAttributes = {
 					C441FE131FF3ECE100CD9354 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C441FE0F1FF3ECE100CD9354 /* Build configuration list for PBXProject "AirWeigh" */;
+			buildConfigurationList = C441FE0F1FF3ECE100CD9354 /* Build configuration list for PBXProject "BLEMessageReciver" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C441FE131FF3ECE100CD9354 /* AirWeigh */,
+				C441FE131FF3ECE100CD9354 /* BLEMessageReciver */,
 			);
 		};
 /* End PBXProject section */
@@ -123,9 +124,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C441FE221FF3ECE100CD9354 /* LaunchScreen.storyboard in Resources */,
-				C441FE1F1FF3ECE100CD9354 /* Assets.xcassets in Resources */,
-				C441FE1D1FF3ECE100CD9354 /* Main.storyboard in Resources */,
+				C45FEA1D220A224200BD1D22 /* Main.storyboard in Resources */,
+				C45FEA1B220A224200BD1D22 /* Assets.xcassets in Resources */,
+				C45FEA1C220A224200BD1D22 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,28 +137,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C441FE1A1FF3ECE100CD9354 /* ViewController.swift in Sources */,
-				C441FE181FF3ECE100CD9354 /* AppDelegate.swift in Sources */,
+				C45FEA1E220A224200BD1D22 /* AppDelegate.swift in Sources */,
+				C45FEA1A220A224200BD1D22 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C441FE1B1FF3ECE100CD9354 /* Main.storyboard */ = {
+		C45FEA14220A224200BD1D22 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C441FE1C1FF3ECE100CD9354 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C441FE201FF3ECE100CD9354 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C441FE211FF3ECE100CD9354 /* Base */,
+				C45FEA15220A224200BD1D22 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C45FEA16220A224200BD1D22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C45FEA17220A224200BD1D22 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -177,6 +178,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +186,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +237,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +245,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -276,11 +281,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEWJ2U74XT;
-				INFOPLIST_FILE = AirWeigh/Info.plist;
+				INFOPLIST_FILE = BLEMessageReciver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.naknut.AirWeigh;
+				PRODUCT_BUNDLE_IDENTIFIER = se.naknut.BLEMessageReciver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -291,11 +296,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEWJ2U74XT;
-				INFOPLIST_FILE = AirWeigh/Info.plist;
+				INFOPLIST_FILE = BLEMessageReciver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = se.naknut.AirWeigh;
+				PRODUCT_BUNDLE_IDENTIFIER = se.naknut.BLEMessageReciver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -303,7 +308,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C441FE0F1FF3ECE100CD9354 /* Build configuration list for PBXProject "AirWeigh" */ = {
+		C441FE0F1FF3ECE100CD9354 /* Build configuration list for PBXProject "BLEMessageReciver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C441FE241FF3ECE100CD9354 /* Debug */,
@@ -312,7 +317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C441FE261FF3ECE100CD9354 /* Build configuration list for PBXNativeTarget "AirWeigh" */ = {
+		C441FE261FF3ECE100CD9354 /* Build configuration list for PBXNativeTarget "BLEMessageReciver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C441FE271FF3ECE100CD9354 /* Debug */,

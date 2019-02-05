@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AirWeigh.xcodeproj">
+      location = "self:/Users/naknut/Development/AirWeigh/BLEMessageReciver.xcodeproj">
    </FileRef>
 </Workspace>

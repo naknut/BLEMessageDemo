@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  AirWeigh
+//  BLEMessageReciver
 //
 //  Created by Marcus Isaksson on 2017-12-27.
 //  Copyright © 2017 Naknut Industries. All rights reserved.
@@ -11,11 +11,13 @@ import CoreBluetooth
 
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager: CBCentralManager!
-    var scale: CBPeripheral?
+    var peripheral: CBPeripheral?
     
-    let serviceUUID = CBUUID(string: "780A")
-    let kitchenScaleCharacteristicUUID = CBUUID(string: "8AA2")
-    @IBOutlet weak var weighLabel: UILabel!
+    let serviceUUID = CBUUID(string: "A48FE431-05B7-4368-A3A9-B607007474B0")
+    let characteristicUUID = CBUUID(string: "4988510C-858E-4617-854F-A3E72BFF6F0D")
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         centralManager.stopScan()
-        scale = peripheral
+        self.peripheral = peripheral
         centralManager.connect(peripheral, options: nil)
     }
     
@@ -44,20 +46,19 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //MARK: - Peripheral delegate
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let service = peripheral.services?.first(where: { $0.uuid == serviceUUID }) {
-            peripheral.discoverCharacteristics([kitchenScaleCharacteristicUUID], for: service)
+            peripheral.discoverCharacteristics([characteristicUUID], for: service)
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        if let characteristic = service.characteristics?.first(where: { $0.uuid == kitchenScaleCharacteristicUUID}) {
+        if let characteristic = service.characteristics?.first(where: { $0.uuid == characteristicUUID}) {
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let data = characteristic.value {
-            let weight: Int = data.withUnsafeBytes{ $0.pointee } >> 8 & 0xFFFFFF
-            weighLabel.text = String(weight) + " g"
+            messageLabel.text = String(data: data, encoding: .utf8)
         }
     }
 }
