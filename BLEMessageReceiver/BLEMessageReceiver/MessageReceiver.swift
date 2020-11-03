@@ -1,26 +1,39 @@
 //
-//  ViewController.swift
-//  BLEMessageReciver
+//  MessageReceiver.swift
+//  BLEMessageReceiver
 //
-//  Created by Marcus Isaksson on 2017-12-27.
-//  Copyright © 2017 Naknut Industries. All rights reserved.
+//  Created by Marcus Isaksson on 11/2/20.
 //
 
-import UIKit
+import SwiftUI
 import CoreBluetooth
 
-class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+class MessageReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    enum Error: Swift.Error {
+        case allreadyStarted, notStarted
+    }
+    
+    enum Status: String {
+        case started, scanning, discovered, connected, discoveredServices, discoveredCharacteristics
+    }
+    
+    @Published var message: String?
+    @Published var status: Status?
+    
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
     
     let serviceUUID = CBUUID(string: "A48FE431-05B7-4368-A3A9-B607007474B0")
     let characteristicUUID = CBUUID(string: "4988510C-858E-4617-854F-A3E72BFF6F0D")
     
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
+    override init() {
+        super.init()
+        print("Init")
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func start() throws {
+        guard centralManager == nil else { throw Error.allreadyStarted }
+        status = .started
         centralManager = CBCentralManager()
         centralManager.delegate = self
     }
@@ -28,43 +41,42 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //MARK: - Central manager delegate
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            statusLabel.text = "Status: Scanning"
+            status = .scanning
             centralManager.scanForPeripherals(withServices: [serviceUUID], options: nil)
         }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        statusLabel.text = "Status: Discovered"
+        status = .discovered
         centralManager.stopScan()
         self.peripheral = peripheral
         centralManager.connect(peripheral, options: nil)
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        statusLabel.text = "Status: Connected"
+        status = .connected
         peripheral.delegate = self
         peripheral.discoverServices([serviceUUID])
     }
     
     //MARK: - Peripheral delegate
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        statusLabel.text = "Status: Discovered Service"
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Swift.Error?) {
+        status = .discoveredServices
         if let service = peripheral.services?.first(where: { $0.uuid == serviceUUID }) {
             peripheral.discoverCharacteristics([characteristicUUID], for: service)
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        statusLabel.text = "Status: Discovered Characteristics"
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Swift.Error?) {
+        status = .discoveredCharacteristics
         if let characteristic = service.characteristics?.first(where: { $0.uuid == characteristicUUID}) {
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Swift.Error?) {
         if let data = characteristic.value {
-            messageLabel.text = String(data: data, encoding: .utf8)
+            message = String(data: data, encoding: .utf8)
         }
     }
 }
-

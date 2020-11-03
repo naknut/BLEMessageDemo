@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BLEMessageSender/BLEMessageSender.xcodeproj">
+      location = "group:BLEMessageReceiver/BLEMessageReceiver.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:BLEMessageReciver/BLEMessageReciver.xcodeproj">
+      location = "group:BLEMessageSender/BLEMessageSender.xcodeproj">
    </FileRef>
 </Workspace>
